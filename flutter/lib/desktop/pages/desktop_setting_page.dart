@@ -408,22 +408,22 @@ class _GeneralState extends State<_General> {
   RxBool serviceBtnEnabled = true.obs;
 
   @override
-  Widget build(BuildContext context) {
-    final scrollController = ScrollController();
-    return ListView(
-      controller: scrollController,
-      children: [
-        if (!isWeb) service(),
-        theme(),
-        _Card(title: 'Language', children: [language()]),
-        if (!isWeb) hwcodec(),
-        if (!isWeb) audio(context),
-        if (!isWeb) record(context),
-        if (!isWeb) WaylandCard(),
-        other()
-      ],
-    ).marginOnly(bottom: _kListViewBottomMargin);
-  }
+  // Widget build(BuildContext context) {
+  //   final scrollController = ScrollController();
+  //   return ListView(
+  //     controller: scrollController,
+  //     children: [
+  //       if (!isWeb) service(),
+  //       theme(),
+  //       _Card(title: 'Language', children: [language()]),
+  //       if (!isWeb) hwcodec(),
+  //       if (!isWeb) audio(context),
+  //       if (!isWeb) record(context),
+  //       if (!isWeb) WaylandCard(),
+  //       other()
+  //     ],
+  //   ).marginOnly(bottom: _kListViewBottomMargin);
+  // }
 
   Widget theme() {
     final current = MyTheme.getThemeModePreference().toShortString();
@@ -1591,12 +1591,12 @@ class _NetworkState extends State<_Network> with AutomaticKeepAliveClientMixin {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (!hideServer)
-                listTile(
-                  icon: Icons.dns_outlined,
-                  title: 'ID/Relay Server',
-                  onTap: () => showServerSettings(gFFI.dialogManager),
-                ),
+              // if (!hideServer)
+              //   listTile(
+              //     icon: Icons.dns_outlined,
+              //     title: 'ID/Relay Server',
+              //     onTap: () => showServerSettings(gFFI.dialogManager),
+              //   ),
               if (!hideServer && (!hideProxy || !hideWebSocket))
                 Divider(height: 1, indent: 16, endIndent: 16),
               if (!hideProxy)
@@ -2203,7 +2203,7 @@ class _AboutState extends State<_About> {
       final scrollController = ScrollController();
       return SingleChildScrollView(
         controller: scrollController,
-        child: _Card(title: translate('About RustDesk'), children: [
+        child: _Card(title: translate('About QgDesk'), children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -2220,22 +2220,22 @@ class _AboutState extends State<_About> {
                 SelectionArea(
                     child: Text('${translate('Fingerprint')}: $fingerprint')
                         .marginSymmetric(vertical: 4.0)),
-              InkWell(
-                  onTap: () {
-                    launchUrlString('https://rustdesk.com/privacy.html');
-                  },
-                  child: Text(
-                    translate('Privacy Statement'),
-                    style: linkStyle,
-                  ).marginSymmetric(vertical: 4.0)),
-              InkWell(
-                  onTap: () {
-                    launchUrlString('https://rustdesk.com');
-                  },
-                  child: Text(
-                    translate('Website'),
-                    style: linkStyle,
-                  ).marginSymmetric(vertical: 4.0)),
+              // InkWell(
+              //     onTap: () {
+              //       launchUrlString('https://rustdesk.com/privacy.html');
+              //     },
+              //     child: Text(
+              //       translate('Privacy Statement'),
+              //       style: linkStyle,
+              //     ).marginSymmetric(vertical: 4.0)),
+              // InkWell(
+              //     onTap: () {
+              //       launchUrlString('https://rustdesk.com');
+              //     },
+              //     child: Text(
+              //       translate('Website'),
+              //       style: linkStyle,
+              //     ).marginSymmetric(vertical: 4.0)),
               Container(
                 decoration: const BoxDecoration(color: Color(0xFF2c8cff)),
                 padding:

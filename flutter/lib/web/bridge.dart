@@ -810,7 +810,7 @@ class RustdeskImpl {
   }
 
   String mainGetAppNameSync({dynamic hint}) {
-    return 'RustDesk';
+    return 'QgDesk';
   }
 
   String mainUriPrefixSync({dynamic hint}) {
