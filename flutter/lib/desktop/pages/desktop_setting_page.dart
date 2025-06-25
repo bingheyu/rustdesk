@@ -408,22 +408,22 @@ class _GeneralState extends State<_General> {
   RxBool serviceBtnEnabled = true.obs;
 
   @override
-  // Widget build(BuildContext context) {
-  //   final scrollController = ScrollController();
-  //   return ListView(
-  //     controller: scrollController,
-  //     children: [
-  //       if (!isWeb) service(),
-  //       theme(),
-  //       _Card(title: 'Language', children: [language()]),
-  //       if (!isWeb) hwcodec(),
-  //       if (!isWeb) audio(context),
-  //       if (!isWeb) record(context),
-  //       if (!isWeb) WaylandCard(),
-  //       other()
-  //     ],
-  //   ).marginOnly(bottom: _kListViewBottomMargin);
-  // }
+  Widget build(BuildContext context) {
+    final scrollController = ScrollController();
+    return ListView(
+      controller: scrollController,
+      children: [
+        if (!isWeb) service(),
+        theme(),
+        _Card(title: 'Language', children: [language()]),
+        if (!isWeb) hwcodec(),
+        if (!isWeb) audio(context),
+        if (!isWeb) record(context),
+        if (!isWeb) WaylandCard(),
+        other()
+      ],
+    ).marginOnly(bottom: _kListViewBottomMargin);
+  }
 
   Widget theme() {
     final current = MyTheme.getThemeModePreference().toShortString();
