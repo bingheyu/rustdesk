@@ -35,7 +35,7 @@ class SettingsPage extends StatefulWidget implements PageShape {
   State<SettingsPage> createState() => _SettingsState();
 }
 
-const url = 'https://rustdesk.com/';
+const url = 'http://baidu.com/';
 
 enum KeepScreenOn {
   never,
@@ -662,13 +662,13 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             ],
           ),
         SettingsSection(title: Text(translate("Settings")), tiles: [
-          if (!disabledSettings && !_hideNetwork && !_hideServer)
-            SettingsTile(
-                title: Text(translate('ID/Relay Server')),
-                leading: Icon(Icons.cloud),
-                onPressed: (context) {
-                  showServerSettings(gFFI.dialogManager);
-                }),
+          // if (!disabledSettings && !_hideNetwork && !_hideServer)
+          //   SettingsTile(
+          //       title: Text(translate('ID/Relay Server')),
+          //       leading: Icon(Icons.cloud),
+          //       onPressed: (context) {
+          //         showServerSettings(gFFI.dialogManager);
+          //       }),
           if (!isIOS && !_hideNetwork && !_hideProxy)
             SettingsTile(
                 title: Text(translate('Socks5/Http(s) Proxy')),
@@ -717,12 +717,12 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
                 });
               },
             ),
-          SettingsTile(
-              title: Text(translate('Language')),
-              leading: Icon(Icons.translate),
-              onPressed: (context) {
-                showLanguageSettings(gFFI.dialogManager);
-              }),
+          // SettingsTile(
+          //     title: Text(translate('Language')),
+          //     leading: Icon(Icons.translate),
+          //     onPressed: (context) {
+          //       showLanguageSettings(gFFI.dialogManager);
+          //     }),
           SettingsTile(
             title: Text(translate(
                 Theme.of(context).brightness == Brightness.light
@@ -837,7 +837,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
                 title: Text(translate("Version: ") + version),
                 value: Padding(
                   padding: EdgeInsets.symmetric(vertical: 8),
-                  child: Text('rustdesk.com',
+                  child: Text('前哥远程辅助',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                       )),
@@ -862,7 +862,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             SettingsTile(
               title: Text(translate("Privacy Statement")),
               onPressed: (context) =>
-                  launchUrlString('https://rustdesk.com/privacy.html'),
+                  launchUrlString('http://rust.1984123.xyz:195'),
               leading: Icon(Icons.privacy_tip),
             )
           ],
@@ -975,12 +975,12 @@ void showAbout(OverlayDialogManager dialogManager) {
         Text('Version: $version'),
         InkWell(
             onTap: () async {
-              const url = 'https://rustdesk.com/';
+              const url = 'http://rust.1984123.xyz:195';
               await launchUrl(Uri.parse(url));
             },
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 8),
-              child: Text('rustdesk.com',
+              child: Text('前哥远程辅助',
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                   )),
